@@ -52,15 +52,14 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(139,92,246,0.7)
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 6px;                 /* was too tall before */
 }
 
 .logo{
-  width: 110px;              /* primary control knob */
+  width: 56px;              /* correct professional size */
   height: auto;
-  filter:
-    drop-shadow(0 0 18px rgba(140, 92, 246, 0.45));
   opacity: 0.95;
+  filter: drop-shadow(0 0 10px rgba(140, 92, 246, 0.35));
 }
 
 .wrap{
@@ -196,7 +195,7 @@ a:hover{ text-decoration: underline; text-decoration-color: rgba(139,92,246,0.7)
 
 @media (max-width: 600px){
   .logo{
-    width: 80px;
+    width: 44px;
   }
 }
 
