@@ -23,7 +23,7 @@ body {
       rgba(8, 8, 12, 0.88)
     ),
     /* raven background image */
-    url("assets/images/raven-bg.png");
+    url("images/raven-bg.png");
 
   background-size: cover;
   background-position: center top;
