@@ -1,1 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <meta
+    name="description"
+    content="A real-world example of how 3 critical security exposures were identified in under 30 minutes using OSINT only. Learn what attackers see first."
+  />
+
+  <title>How I Found 3 Critical Exposures in 30 Minutes Using OSINT Only | Black Feather Security</title>
+
+  <link rel="stylesheet" href="../assets/styles.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="header">
+      <a href="../index.html" class="brand">
+        <img src="../assets/images/raven-logo.png" alt="Black Feather Security" class="logo" />
+        <div class="brand-text">
+          <div class="name">Black Feather Security</div>
+          <div class="tag">See the attack. Become the defense.</div>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="../index.html#services">Services</a>
+        <a href="../snapshot.html">Free Snapshot</a>
+        <a href="../blog.html">Blog</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="hero">
+        <p class="eyebrow">OSINT Case Study</p>
+
+        <h1>
+          How I Found 3 Critical Exposures in 30 Minutes Using OSINT Only
+        </h1>
+
+        <p class="sub">
+          No scanning. No credentials. No internal access. Just publicly available data—and a realistic attacker mindset.
+        </p>
+      </section>
+
+      <section class="section">
+        <p>
+          One of the most common misconceptions in cybersecurity is that an attacker needs access to your systems to begin causing damage.
+        </p>
+
+        <p>
+          In reality, most attacks start long before exploitation—with reconnaissance. Publicly available information can reveal enough about an organization to identify weak points, prioritize targets, and plan an attack path.
+        </p>
+
+        <p>
+          In this case study, I performed a basic external review of a small business using only open-source intelligence (OSINT). In under 30 minutes, I identified three exposures that could have been leveraged by an attacker.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Methodology (High-Level)</h2>
+
+        <p>
+          This was not a penetration test. No systems were accessed, and no intrusive actions were taken.
+        </p>
+
+        <p>
+          The review focused on:
+        </p>
+
+        <ul>
+          <li>Public domain and subdomain enumeration</li>
+          <li>Visible infrastructure and service exposure</li>
+          <li>Publicly indexed data and misconfigurations</li>
+          <li>Basic correlation of external assets</li>
+        </ul>
+
+        <p>
+          This is the same starting point many attackers use.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Finding #1: Exposed Subdomain with Login Portal</h2>
+
+        <p>
+          A non-obvious subdomain was discovered through passive enumeration techniques. This subdomain hosted a login portal that was not linked from the main website.
+        </p>
+
+        <p>
+          While the portal itself required authentication, its presence revealed:
+        </p>
+
+        <ul>
+          <li>An additional attack surface not monitored publicly</li>
+          <li>Potential for credential-based attacks (password spraying, phishing targeting)</li>
+          <li>A likely internal or third-party service</li>
+        </ul>
+
+        <p>
+          From an attacker’s perspective, hidden or forgotten services are often high-value targets.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Finding #2: Publicly Accessible Service Indicators</h2>
+
+        <p>
+          External infrastructure analysis revealed indicators of publicly accessible services tied to the organization’s domain.
+        </p>
+
+        <p>
+          Even without direct interaction, metadata and response behavior suggested:
+        </p>
+
+        <ul>
+          <li>Potential outdated or misconfigured services</li>
+          <li>Unclear segmentation between public and internal systems</li>
+          <li>Inconsistent exposure across assets</li>
+        </ul>
+
+        <p>
+          These signals alone would be enough for an attacker to begin targeted probing.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Finding #3: Overexposed Organizational Footprint</h2>
+
+        <p>
+          The organization’s external footprint extended beyond what leadership likely expected.
+        </p>
+
+        <p>
+          Through aggregation of publicly available sources, it was possible to map:
+        </p>
+
+        <ul>
+          <li>Multiple associated domains</li>
+          <li>Third-party services tied to the business</li>
+          <li>Technology stack indicators</li>
+        </ul>
+
+        <p>
+          Individually, these pieces may seem low-risk. Combined, they create a clearer picture of how the organization operates—and where it may be vulnerable.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Why This Matters</h2>
+
+        <p>
+          None of these findings required:
+        </p>
+
+        <ul>
+          <li>Network access</li>
+          <li>Credentials</li>
+          <li>Vulnerability scanning</li>
+          <li>Exploitation</li>
+        </ul>
+
+        <p>
+          This is the reality of modern attacks. Exposure often exists before any “hack” takes place.
+        </p>
+
+        <p>
+          Organizations that rely only on internal tools or vulnerability scans often miss this external perspective entirely.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>What This Tells You</h2>
+
+        <p>
+          If this level of visibility is possible in 30 minutes, consider what a determined attacker could uncover with more time.
+        </p>
+
+        <p>
+          The goal is not to eliminate all exposure—that’s not realistic. The goal is to understand what is visible and reduce unnecessary risk.
+        </p>
+      </section>
+
+      <section class="card contact">
+        <h2>Want to See What Your Business Exposes?</h2>
+
+        <p>
+          Black Feather Security offers a free external attack surface snapshot to help you understand what is visible from the outside.
+        </p>
+
+        <p>
+          No scanning. No access required. Just a practical review of your external footprint.
+        </p>
+
+        <a class="button primary" href="../snapshot.html">
+          Request Your Free Snapshot
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Black Feather Security</div>
+      <div class="legal">Cybersecurity services in Maryland | DC | Northern Virginia</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
