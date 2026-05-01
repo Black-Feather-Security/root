@@ -1,1 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+  <meta
+    name="description"
+    content="Black Feather Security blog: practical cybersecurity guidance, OSINT case studies, attack surface exposure, penetration testing, and security assessment insights for small businesses in Maryland, DC, and Northern Virginia."
+  />
+
+  <title>Cybersecurity Blog | Black Feather Security</title>
+
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header class="header">
+      <a href="index.html" class="brand">
+        <img src="assets/images/raven-logo.png" alt="Black Feather Security raven logo" class="logo" />
+        <div class="brand-text">
+          <div class="name">Black Feather Security</div>
+          <div class="tag">See the attack. Become the defense.</div>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="index.html#services">Services</a>
+        <a href="snapshot.html">Free Snapshot</a>
+        <a href="blog.html">Blog</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+
+      <section class="hero">
+        <p class="eyebrow">Black Feather Security Blog</p>
+
+        <h1>
+          Practical Cybersecurity Guidance for Real-World Risk
+        </h1>
+
+        <p class="sub">
+          Field notes, exposure analysis, OSINT lessons, and defensive guidance for small
+          and mid-sized organizations that need practical security outcomes—not theory.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="snapshot.html">
+            Get a Free External Snapshot
+          </a>
+
+          <a class="button secondary" href="#posts">
+            Read Articles
+          </a>
+        </div>
+      </section>
+
+      <section class="card statement">
+        <h2>Security advice should lead to action.</h2>
+        <p>
+          These articles are written to help business owners, IT leaders, and technical teams
+          understand what attackers look for, how exposure becomes risk, and what to prioritize first.
+        </p>
+      </section>
+
+      <section id="posts" class="section">
+        <h2>Latest Articles</h2>
+
+        <div class="grid">
+
+          <article class="card">
+            <p class="eyebrow">OSINT / External Exposure</p>
+            <h3>
+              <a href="posts/osint-critical-exposures.html">
+                How I Found 3 Critical Exposures in 30 Minutes Using OSINT Only
+              </a>
+            </h3>
+            <p>
+              A practical look at how public-facing assets, visible infrastructure,
+              and external misconfigurations can reveal real business risk before
+              any scanning or system access occurs.
+            </p>
+            <a class="button secondary" href="posts/osint-critical-exposures.html">
+              Read Article
+            </a>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">Maryland Cybersecurity</p>
+            <h3>
+              <a href="#">
+                Cybersecurity Risks Facing Small Businesses in Maryland
+              </a>
+            </h3>
+            <p>
+              A forthcoming guide for Maryland businesses on external exposure,
+              phishing risk, weak visibility, and practical first steps.
+            </p>
+            <a class="button secondary" href="#">
+              Coming Soon
+            </a>
+          </article>
+
+          <article class="card">
+            <p class="eyebrow">Security Assessments</p>
+            <h3>
+              <a href="#">
+                What a Security Assessment Should Actually Tell You
+              </a>
+            </h3>
+            <p>
+              A forthcoming breakdown of useful security assessment outcomes:
+              real findings, clear priorities, and defensible remediation guidance.
+            </p>
+            <a class="button secondary" href="#">
+              Coming Soon
+            </a>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="card contact">
+        <h2>Want to Know What Your Business Exposes Publicly?</h2>
+
+        <p>
+          Start with a free external attack surface snapshot. No scanning, no access,
+          and no intrusive testing—just a practical review of what is visible from the outside.
+        </p>
+
+        <a class="button primary" href="snapshot.html">
+          Request a Free Snapshot
+        </a>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Black Feather Security</div>
+      <div class="legal">Cybersecurity services in Maryland | DC | Northern Virginia</div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
