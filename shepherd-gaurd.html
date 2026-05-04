@@ -1,1 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shepherd Guard | Security for Churches</title>
+  <meta name="description" content="Shepherd Guard provides church-focused cybersecurity monitoring, alerting, and incident response guidance. A part of Black Feather Security." />
 
+  <style>
+    :root {
+      --bg: #050507;
+      --panel: #101018;
+      --panel-2: #151520;
+      --text: #f4f4f5;
+      --muted: #b9b9c3;
+      --gold: #d6a84f;
+      --purple: #8b5cf6;
+      --red: #ef233c;
+      --blue: #2563eb;
+      --border: rgba(214, 168, 79, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(239, 35, 60, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.18), transparent 30%),
+        radial-gradient(circle at center, rgba(139, 92, 246, 0.12), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .brand-mark {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      color: var(--text);
+    }
+
+    .brand-subtitle {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 3px;
+    }
+
+    .nav-cta {
+      padding: 12px 18px;
+      border: 1px solid var(--gold);
+      border-radius: 999px;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .hero {
+      padding: 88px 0 70px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 0.85rem;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      max-width: 780px;
+      margin: 0 auto 32px;
+      color: var(--muted);
+      font-size: 1.25rem;
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--gold), #f3d27a);
+      color: #080808;
+    }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.22);
+      color: var(--text);
+    }
+
+    section {
+      padding: 72px 0;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 18px;
+      text-align: center;
+    }
+
+    .section-lead {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 42px;
+      text-align: center;
+      font-size: 1.12rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    }
+
+    .card h3 {
+      color: var(--gold);
+      margin-bottom: 12px;
+      font-size: 1.35rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 14px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .problem {
+      background: rgba(0,0,0,0.28);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .pricing {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: stretch;
+    }
+
+    .price-card {
+      position: relative;
+      border: 1px solid var(--border);
+    }
+
+    .price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin: 16px 0 8px;
+    }
+
+    .price span {
+      color: var(--muted);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .best {
+      border: 1px solid var(--purple);
+      transform: translateY(-10px);
+    }
+
+    .badge {
+      position: absolute;
+      top: -14px;
+      right: 22px;
+      background: var(--purple);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .final {
+      text-align: center;
+      background:
+        linear-gradient(90deg, rgba(239,35,60,0.15), rgba(139,92,246,0.18), rgba(37,99,235,0.15));
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    footer {
+      padding: 34px 0;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.95rem;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .purple {
+      color: var(--purple);
+    }
+
+    @media (max-width: 850px) {
+      .nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .grid,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .best {
+        transform: none;
+      }
+
+      .brand {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <img src="shepherd-guard-logo.png" alt="Shepherd Guard Logo" class="brand-mark" />
+        <div>
+          <div class="brand-title">Shepherd Guard</div>
+          <div class="brand-subtitle">Security for Churches</div>
+        </div>
+      </div>
+
+      <a class="nav-cta" href="mailto:security@blackfeathersecurity.com?subject=Shepherd Guard Security Snapshot">
+        Request a Snapshot
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">A part of Black Feather Security</div>
+        <h1>Protect your church without needing a security team.</h1>
+        <p>
+          Shepherd Guard provides church-focused cybersecurity monitoring, alerting,
+          and incident response guidance built for ministries, staff, volunteers,
+          and leadership teams who need protection that fits their mission.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:security@blackfeathersecurity.com?subject=Free Church Security Snapshot">
+            Get Your Free Church Security Snapshot
+          </a>
+          <a class="btn btn-secondary" href="#pricing">
+            View Pricing
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div class="container">
+        <h2 class="section-title">Churches are being targeted quietly.</h2>
+        <p class="section-lead">
+          Most attacks do not begin with advanced hacking. They begin with access:
+          compromised email accounts, phishing, exposed files, weak passwords,
+          and unauthorized logins that go unnoticed.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Member Data Risk</h3>
+            <p>Churches often store contact information, giving records, volunteer data, and sensitive internal communications.</p>
+          </div>
+
+          <div class="card">
+            <h3>Email & Financial Fraud</h3>
+            <p>Attackers frequently target pastors, finance teams, and administrators through phishing and payment redirection attempts.</p>
+          </div>
+
+          <div class="card">
+            <h3>Limited IT Support</h3>
+            <p>Many churches rely on small teams or volunteers, creating real security gaps even when everyone is acting in good faith.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Security that fits a church — not a corporation.</h2>
+        <p class="section-lead">
+          Shepherd Guard gives your leadership team clear visibility, practical guidance,
+          and response support without overwhelming technical complexity.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Monitor</h3>
+            <p>We watch for suspicious activity, exposed risk, and real-world indicators that may affect your church.</p>
+          </div>
+
+          <div class="card">
+            <h3>Alert</h3>
+            <p>You receive clear notifications when something matters — not a flood of confusing technical noise.</p>
+          </div>
+
+          <div class="card">
+            <h3>Respond</h3>
+            <p>When something happens, we help you understand what it means and what steps to take next.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div class="container">
+        <h2 class="section-title">How Shepherd Guard works</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h3>1. Quick Setup</h3>
+            <p>We begin with a lightweight onboarding process focused on your current tools, accounts, and risk areas.</p>
+          </div>
+
+          <div class="card">
+            <h3>2. Baseline</h3>
+            <p>We identify what normal looks like for your church so suspicious activity is easier to recognize.</p>
+          </div>
+
+          <div class="card">
+            <h3>3. Ongoing Protection</h3>
+            <p>We provide continuous visibility, reporting, and guidance so leadership is not left guessing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <h2 class="section-title">Church-friendly pricing</h2>
+        <p class="section-lead">
+          Simple monthly options designed for churches that need protection,
+          clarity, and support without enterprise-level cost.
+        </p>
+
+        <div class="grid pricing">
+          <div class="card price-card">
+            <h3>Starter</h3>
+            <p>Awareness for small churches.</p>
+            <div class="price">$99<span>/month</span></div>
+            <ul>
+              <li>Quarterly External Security Snapshot</li>
+              <li>Basic alert monitoring</li>
+              <li>Email alert notifications</li>
+              <li>Monthly summary report</li>
+            </ul>
+          </div>
+
+          <div class="card price-card best">
+            <div class="badge">Recommended</div>
+            <h3>Standard</h3>
+            <p>Practical protection for growing churches.</p>
+            <div class="price">$249<span>/month</span></div>
+            <ul>
+              <li>Continuous monitoring</li>
+              <li>Alert triage and review</li>
+              <li>Suspicious login detection</li>
+              <li>Monthly security report</li>
+              <li>Incident response guidance</li>
+            </ul>
+          </div>
+
+          <div class="card price-card">
+            <h3>Guardian</h3>
+            <p>Higher-confidence support for larger churches.</p>
+            <div class="price">$499<span>/month</span></div>
+            <ul>
+              <li>Everything in Standard</li>
+              <li>Priority alerting</li>
+              <li>Incident investigation support</li>
+              <li>Detection tuning</li>
+              <li>Quarterly security review call</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="section-lead" style="margin-top:40px;">
+          <span class="gold">Optional one-time assessment:</span>
+          Church Security Assessment — $299
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Backed by Black Feather Security</h2>
+        <p class="section-lead">
+          Shepherd Guard is built on the same security principles used by Black Feather Security:
+          real-world threat visibility, detection-focused defense, and clear guidance that helps organizations act before an incident becomes a crisis.
+        </p>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="container">
+        <h2 class="section-title">You do not need to become a security expert.</h2>
+        <p class="section-lead">
+          You need to know someone is watching, validating, and helping your church respond when something matters.
+        </p>
+
+        <a class="btn btn-primary" href="mailto:security@blackfeathersecurity.com?subject=Free Church Security Snapshot">
+          Request Your Free Church Security Snapshot
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>Shepherd Guard</strong> — Security for Churches<br />
+      A part of <span class="gold">Black Feather Security</span><br />
+      <span class="purple">See the attack. Become the defense.</span>
+    </div>
+  </footer>
+
+</body>
+</html>
