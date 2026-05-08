@@ -6,10 +6,10 @@
 
   <meta
     name="description"
-    content="Shepherd Guard provides cybersecurity monitoring, alert triage, and incident response guidance for churches. A part of Black Feather Security."
+    content="Shepherd Guard provides church-focused cybersecurity reviews, monitoring, suspicious login detection, and incident response guidance. A ministry-focused service from Black Feather Security."
   />
 
-  <title>Shepherd Guard | Security for Churches</title>
+  <title>Shepherd Guard | Cybersecurity for Churches</title>
 
   <link rel="stylesheet" href="assets/styles.css" />
 
@@ -17,6 +17,7 @@
     :root {
       --sg-gold: #d6a84f;
       --sg-gold-soft: rgba(214, 168, 79, 0.18);
+      --sg-gold-line: rgba(214, 168, 79, 0.32);
     }
 
     .sg-gold {
@@ -24,40 +25,45 @@
     }
 
     .sg-card {
-      border: 1px solid rgba(214, 168, 79, 0.28);
+      border: 1px solid var(--sg-gold-line);
     }
 
     .sg-hero-logo {
-      max-width: 360px;
-      width: 80%;
-      margin: 0 auto 26px;
+      max-width: 380px;
+      width: 82%;
+      margin: 0 auto 28px;
       display: block;
-      filter: drop-shadow(0 0 24px rgba(214, 168, 79, 0.25));
+      filter: drop-shadow(0 0 28px rgba(214, 168, 79, 0.28));
+    }
+
+    .trust-strip.sg-strip span {
+      border-color: var(--sg-gold-line);
+      color: var(--sg-gold);
     }
 
     .price {
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 800;
-      margin: 12px 0;
+      margin: 14px 0;
       color: #fff;
     }
 
     .price span {
       font-size: 1rem;
-      opacity: 0.75;
+      opacity: 0.72;
       font-weight: 400;
     }
 
     .recommended {
-      border-color: rgba(214, 168, 79, 0.65);
-      box-shadow: 0 0 35px rgba(214, 168, 79, 0.12);
+      border-color: rgba(214, 168, 79, 0.72);
+      box-shadow: 0 0 34px rgba(214, 168, 79, 0.14);
     }
 
     .badge {
       display: inline-block;
       margin-bottom: 12px;
-      padding: 5px 10px;
-      border: 1px solid rgba(214, 168, 79, 0.45);
+      padding: 5px 11px;
+      border: 1px solid rgba(214, 168, 79, 0.48);
       color: var(--sg-gold);
       font-size: 0.75rem;
       letter-spacing: 0.08em;
@@ -70,6 +76,25 @@
       font-size: 0.9rem;
       opacity: 0.75;
     }
+
+    .service-label {
+      color: var(--sg-gold);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    .church-list {
+      margin-top: 16px;
+      padding-left: 20px;
+    }
+
+    .church-list li {
+      margin-bottom: 8px;
+      color: var(--muted);
+    }
   </style>
 </head>
 
@@ -79,24 +104,25 @@
     <!-- HEADER -->
     <header class="header">
       <div class="brand">
-        <img src="assets/images/shepherd-guard-logo.png" alt="Shepherd Guard" class="logo" />
+        <img src="assets/images/shepherd-guard-logo.png" alt="Shepherd Guard logo" class="logo" />
+
         <div class="brand-text">
           <div class="name">Shepherd Guard</div>
           <div class="tag">Security for Churches</div>
         </div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Black Feather Security</a>
         <a href="#services">Services</a>
         <a href="#pricing">Pricing</a>
-        <a href="snapshot.html">Free Snapshot</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <!-- HERO -->
     <main>
+
+      <!-- HERO -->
       <section class="hero">
         <img
           src="assets/images/shepherd-guard-logo-full.png"
@@ -104,92 +130,151 @@
           class="sg-hero-logo"
         />
 
-        <p class="eyebrow">A part of Black Feather Security</p>
+        <p class="eyebrow">A ministry-focused service from Black Feather Security</p>
 
         <h1>
-          Protect Your Church Without Needing a Security Team
+          Cybersecurity Protection for Churches That Need Clarity, Not Complexity.
         </h1>
 
         <p class="sub">
-          Shepherd Guard provides church-focused cybersecurity monitoring, alert triage,
-          and incident response guidance for ministries that need protection,
-          clarity, and support without enterprise-level complexity.
+          Shepherd Guard helps churches, ministries, and nonprofit teams identify security risks,
+          monitor suspicious activity, and respond with confidence when something looks wrong.
         </p>
 
         <div class="hero-actions">
           <a class="button primary" href="mailto:security@blackfeathersecurity.com?subject=Free Church Security Snapshot">
             Get a Free Church Security Snapshot
           </a>
+
           <a class="button secondary" href="#pricing">
-            View Pricing
+            View Church-Friendly Pricing
           </a>
         </div>
 
-        <p style="margin-top: 10px; font-size: 0.9rem; opacity: 0.8;">
-          Built for churches, ministries, staff, volunteers, and leadership teams
+        <p class="service-area">
+          Built for churches, ministries, staff teams, volunteers, and leadership boards.
         </p>
       </section>
 
-      <!-- TRUST STATEMENT -->
+      <!-- TRUST STRIP -->
+      <section class="trust-strip sg-strip" aria-label="Shepherd Guard trust indicators">
+        <span>Church-Focused</span>
+        <span>Practical Guidance</span>
+        <span>Monitoring Support</span>
+        <span>Incident Help</span>
+      </section>
+
+      <!-- PROBLEM STATEMENT -->
       <section class="card statement sg-card">
-        <h2>Most Churches Carry Real Risk—and Limited Security Support</h2>
+        <h2>Churches Are Trusted Communities — and That Trust Must Be Protected.</h2>
+
         <p>
-          Churches manage member data, giving platforms, staff accounts, email systems,
-          volunteer access, and sensitive communications. Attackers often target these
-          environments through phishing, compromised accounts, exposed data, and unauthorized logins.
-          Shepherd Guard helps you see what matters before it becomes a crisis.
+          Churches manage giving platforms, staff accounts, member information, volunteer access,
+          email systems, livestream tools, and sensitive communications. Attackers often target
+          these environments through phishing, compromised accounts, donation fraud, ransomware,
+          and unauthorized logins.
         </p>
+
+        <p>
+          Shepherd Guard gives church leaders a practical way to understand risk, improve security,
+          and know what to do before a technical issue becomes a ministry crisis.
+        </p>
+      </section>
+
+      <!-- WHAT WE PROTECT -->
+      <section class="section">
+        <p class="eyebrow">What We Help Protect</p>
+        <h2>Security Support for the Systems Churches Actually Use</h2>
+
+        <div class="grid three">
+          <article class="card sg-card">
+            <h3>Email & Staff Accounts</h3>
+            <p>
+              We help identify suspicious logins, weak access controls, phishing exposure,
+              and account compromise indicators.
+            </p>
+          </article>
+
+          <article class="card sg-card">
+            <h3>Giving & Website Platforms</h3>
+            <p>
+              We review public-facing risks tied to church websites, donation platforms,
+              forms, plugins, and administrative access.
+            </p>
+          </article>
+
+          <article class="card sg-card">
+            <h3>Member & Ministry Data</h3>
+            <p>
+              We help leadership understand where sensitive church information may be exposed,
+              misconfigured, or insufficiently protected.
+            </p>
+          </article>
+        </div>
       </section>
 
       <!-- SERVICES -->
       <section id="services" class="section">
-        <h2>Security That Fits a Church</h2>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2>Church Security Services</h2>
+          </div>
+        </div>
 
         <div class="grid">
 
           <article class="card sg-card">
-            <h3>Monitoring</h3>
+            <p class="service-label">Free Entry Point</p>
+            <h3>Free Church Security Snapshot</h3>
             <p>
-              Ongoing visibility into suspicious activity, account risk, and warning signs
-              that may affect your church.
+              A practical external review of what may be visible about your church online,
+              including public exposure, domain risks, and obvious security concerns.
             </p>
           </article>
 
           <article class="card sg-card">
-            <h3>Alert Triage</h3>
+            <p class="service-label">One-Time Review</p>
+            <h3>Church Security Review</h3>
             <p>
-              We help separate meaningful alerts from noise so your leadership team is not
-              left guessing.
+              A focused assessment of staff accounts, email security, access controls,
+              backup readiness, website risk, and practical security gaps.
             </p>
           </article>
 
           <article class="card sg-card">
-            <h3>Incident Guidance</h3>
+            <p class="service-label">Website & Giving</p>
+            <h3>Website & Donation Platform Review</h3>
             <p>
-              Clear next steps when something looks wrong, including practical response
-              recommendations.
+              A targeted review of church websites, forms, donation pages, plugins,
+              administrative access, and common web security risks.
             </p>
           </article>
 
           <article class="card sg-card">
-            <h3>Email & Account Risk</h3>
+            <p class="service-label">Monitoring</p>
+            <h3>Suspicious Activity Monitoring</h3>
             <p>
-              Focused attention on compromised accounts, suspicious logins, phishing,
-              and access misuse.
+              Ongoing monitoring support for suspicious logins, endpoint activity,
+              cloud account risk, and security events that may require action.
             </p>
           </article>
 
           <article class="card sg-card">
-            <h3>External Security Snapshot</h3>
+            <p class="service-label">Response</p>
+            <h3>Incident Response Guidance</h3>
             <p>
-              A practical review of what is visible from the outside before attackers use it.
+              Clear support when something goes wrong, including account compromise,
+              phishing incidents, ransomware concerns, and urgent security decisions.
             </p>
           </article>
 
           <article class="card sg-card">
-            <h3>Leadership Reporting</h3>
+            <p class="service-label">Leadership Support</p>
+            <h3>Plain-English Reporting</h3>
             <p>
-              Simple monthly summaries written for decision-makers, not security engineers.
+              Monthly or quarterly summaries written for pastors, administrators,
+              elders, deacons, trustees, and decision-makers—not security engineers.
             </p>
           </article>
 
@@ -198,32 +283,45 @@
 
       <!-- PROCESS -->
       <section class="section">
-        <h2>How It Works</h2>
+        <p class="eyebrow">Process</p>
+        <h2>How Shepherd Guard Works</h2>
 
         <div class="steps">
 
           <article class="card step sg-card">
             <span>01</span>
             <h3>Review</h3>
-            <p>We identify your current tools, accounts, access risks, and public exposure.</p>
+            <p>
+              We identify your church’s key systems, accounts, online presence,
+              and current security concerns.
+            </p>
           </article>
 
           <article class="card step sg-card">
             <span>02</span>
-            <h3>Monitor</h3>
-            <p>We watch for suspicious behavior and indicators that may require action.</p>
+            <h3>Prioritize</h3>
+            <p>
+              We separate urgent risks from low-value noise so leadership knows
+              what matters first.
+            </p>
           </article>
 
           <article class="card step sg-card">
             <span>03</span>
-            <h3>Alert</h3>
-            <p>You receive clear guidance when something matters—not confusing noise.</p>
+            <h3>Monitor</h3>
+            <p>
+              We help watch for suspicious activity, account risk, and warning signs
+              that may require action.
+            </p>
           </article>
 
           <article class="card step sg-card">
             <span>04</span>
             <h3>Respond</h3>
-            <p>We help your team understand what happened and what to do next.</p>
+            <p>
+              When something looks wrong, your team receives clear guidance
+              on what happened and what to do next.
+            </p>
           </article>
 
         </div>
@@ -231,40 +329,47 @@
 
       <!-- PRICING -->
       <section id="pricing" class="section">
+        <p class="eyebrow">Pricing</p>
         <h2>Church-Friendly Pricing</h2>
 
         <div class="grid">
 
           <article class="card sg-card">
             <h3>Starter</h3>
-            <p>Awareness for small churches.</p>
+            <p>Basic visibility for small churches.</p>
 
             <div class="price">$99<span>/month</span></div>
 
-            <p>
-              Includes quarterly external security snapshot, basic alert monitoring,
-              email notifications, and monthly summary reporting.
-            </p>
+            <ul class="church-list">
+              <li>Quarterly external security snapshot</li>
+              <li>Basic suspicious activity review</li>
+              <li>Email-based guidance</li>
+              <li>Monthly summary</li>
+            </ul>
 
             <p class="mini-note">
-              Best for small congregations or churches with minimal IT support.
+              Best for small congregations with limited technology and minimal IT support.
             </p>
           </article>
 
           <article class="card sg-card recommended">
             <div class="badge">Recommended</div>
+
             <h3>Standard</h3>
-            <p>Practical protection for growing churches.</p>
+            <p>Practical protection for active churches.</p>
 
             <div class="price">$249<span>/month</span></div>
 
-            <p>
-              Includes continuous monitoring, alert triage, suspicious login detection,
-              monthly reporting, and incident response guidance.
-            </p>
+            <ul class="church-list">
+              <li>Continuous suspicious activity monitoring</li>
+              <li>Alert triage support</li>
+              <li>Suspicious login review</li>
+              <li>Monthly leadership reporting</li>
+              <li>Incident response guidance</li>
+            </ul>
 
             <p class="mini-note">
-              Best for churches with staff, online giving, and multiple systems.
+              Best for churches with staff accounts, online giving, volunteers, and multiple systems.
             </p>
           </article>
 
@@ -274,49 +379,77 @@
 
             <div class="price">$499<span>/month</span></div>
 
-            <p>
-              Includes everything in Standard, priority alerting, incident investigation
-              support, detection tuning, and quarterly security review calls.
-            </p>
+            <ul class="church-list">
+              <li>Everything in Standard</li>
+              <li>Priority alert review</li>
+              <li>Quarterly security review call</li>
+              <li>Incident investigation support</li>
+              <li>Expanded monitoring guidance</li>
+            </ul>
 
             <p class="mini-note">
-              Best for larger churches, multi-campus churches, and higher-risk environments.
+              Best for larger churches, multi-campus ministries, schools, and higher-risk environments.
             </p>
           </article>
 
         </div>
 
-        <section class="card statement sg-card" style="margin-top: 30px;">
-          <h2>Optional One-Time Assessment</h2>
-          <p>
-            <span class="sg-gold"><strong>Church Security Assessment — $299.</strong></span>
-            A focused review of exposure, access risk, and practical recommendations your team can act on.
-          </p>
-        </section>
+        <div class="grid" style="margin-top: 30px;">
+
+          <article class="card sg-card">
+            <h3>Church Security Review</h3>
+            <div class="price">$299<span> one-time</span></div>
+            <p>
+              A focused review of staff accounts, email security, public exposure,
+              access risks, backups, and practical recommendations.
+            </p>
+          </article>
+
+          <article class="card sg-card">
+            <h3>Website & Donation Platform Review</h3>
+            <div class="price">$499<span> one-time</span></div>
+            <p>
+              A targeted review of your website, donation pages, forms, plugins,
+              admin access, and common web security issues.
+            </p>
+          </article>
+
+        </div>
       </section>
 
-      <!-- CTA BLOCK -->
+      <!-- WHY IT MATTERS -->
+      <section class="card statement sg-card">
+        <h2>Security Is Stewardship.</h2>
+
+        <p>
+          Shepherd Guard exists to help churches protect people, trust, giving,
+          operations, and ministry continuity. The goal is not fear. The goal is readiness.
+        </p>
+      </section>
+
+      <!-- CTA -->
       <section id="contact" class="card contact sg-card">
-        <h2>Start With a Free Church Security Snapshot</h2>
+        <p class="eyebrow">Start Here</p>
+
+        <h2>Request a Free Church Security Snapshot</h2>
 
         <p>
           Begin with a free external review. No intrusive testing, no disruption,
-          and no technical pressure—just a clear look at what may be visible to attackers.
+          and no pressure—just a clear look at what may be visible to attackers.
         </p>
 
-        <a class="button primary" href="mailto:security@blackfeathersecurity.com?subject=Free Church Security Snapshot">
-          Request Your Free Church Security Snapshot
-        </a>
-
-        <p style="margin-top: 15px;">
-          Or email:
-          <a href="mailto:security@blackfeathersecurity.com">
-            security@blackfeathersecurity.com
+        <div class="hero-actions">
+          <a class="button primary" href="mailto:security@blackfeathersecurity.com?subject=Free Church Security Snapshot">
+            Request Your Free Snapshot
           </a>
-        </p>
 
-        <p style="margin-top: 10px; font-size: 0.85rem; opacity: 0.7;">
-          Shepherd Guard is a part of Black Feather Security.
+          <a class="button secondary" href="mailto:security@blackfeathersecurity.com">
+            Email Shepherd Guard
+          </a>
+        </div>
+
+        <p class="fine-print">
+          Shepherd Guard is a ministry-focused service from Black Feather Security.
         </p>
       </section>
 
